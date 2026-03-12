@@ -1,0 +1,112 @@
+.hero {
+
+	&__body {
+		min-height: 592px;
+		display: flex;
+		align-items: center;
+		position: relative;
+	}
+
+	&__image {
+		width: 100%;
+		height: 100%;
+
+		@media screen and (max-width: 1200px) {
+			height: 592px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: top right;
+
+			@media screen and (max-width: 1200px) {
+				max-width: none;
+			}
+			@media screen and (max-width: 576px) {
+				object-position: top 0 right -20vw;
+			}
+		}
+	}// /.&image
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		padding-left: 64px;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		z-index: 1;
+		transform: translateY(-50%);
+
+		@media screen and (max-width: 1200px) {
+			width: 80vw;
+			padding-left: 0;
+			top: auto;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		
+		&_text {
+			margin-bottom: 16px;
+			color: $blue;
+			font-size: 2.8rem;
+			font-size: clamp(18px, 1.99vw, 28px);
+			font-weight: 600;
+			line-height: clamp(28px, 2.54vw, 36px);
+
+			@media screen and (max-width: 576px) {
+				margin-bottom: 6px;
+				text-align: center;
+			}
+		}
+
+		&_title {
+			margin-bottom: 44px;
+			color: $white;
+			font-size: clamp(28px, 4.53vw, 64px);
+			font-weight: 900;
+			line-height: clamp(36px, 5.66vw, 80px);
+			
+			@media screen and (min-width: 1201px) {
+				max-width: 541px;
+			}
+			@media screen and (max-width: 576px) {
+				margin-bottom: 24px;
+				text-align: center;
+			}
+		}
+
+		&_link {
+			align-self: flex-start;
+			padding: 16px 32px;
+			font-size: 1.8rem;
+			font-weight: 700;
+			line-height: 2.4rem;
+			animation: heroButton 3.5s infinite;
+
+			@media screen and (max-width: 576px) {
+				align-self: stretch;
+				padding: 12px;
+				font-size: 1.6rem;
+				line-height: 2rem;
+			}
+		}
+	}// /.hero__content
+}// /.hero
+
+@keyframes heroButton {
+	0% {
+		transform: scale(1);
+	}
+
+	35% {
+		transform: scale(1.1);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

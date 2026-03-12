@@ -1,0 +1,38 @@
+.wrapper {
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	overflow-x: hidden;
+
+	.container {
+		--containerWidth: 1414px;
+		--paddingX: 15px;
+
+		width: 100%;
+		max-width: calc(var(--containerWidth) + var(--paddingX) * 2);
+		margin-inline: auto;
+		padding-inline: var(--paddingX);
+
+		@media screen and (max-width: 768px) {
+			max-width: 100%;
+			--paddingX: 10px;
+		}
+	}
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	gap: 44px;
+	padding-top: 64px;
+
+	@media screen and (max-width: 576px) {
+		gap: 32px;
+	}
+}
